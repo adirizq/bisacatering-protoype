@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.AccountFragment">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/ambient_yellow"
+        app:layout_constraintTop_toTopOf="@id/img_avatar"
+        app:layout_constraintBottom_toBottomOf="@id/img_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_avatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="52dp"
+        android:src="@drawable/placeholder_avatar"
+        app:civ_border_width="3dp"
+        app:civ_border_color="@color/yellow"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <ImageView
+        android:id="@+id/img_edit_avatar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/bg_fab"
+        android:src="@drawable/ic_round_edit_24"
+        android:padding="6dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:stateListAnimator="@animator/btn_click"
+        app:tint="@color/white"
+        app:layout_constraintTop_toTopOf="@id/img_avatar"
+        app:layout_constraintEnd_toEndOf="@id/img_avatar"/>
+
+    <TextView
+        android:id="@+id/tv_nama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:text="Joko Setyo Pramono"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="16sp"
+        android:includeFontPadding="false"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/img_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_no_hp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:text="081234567890"
+        android:includeFontPadding="false"
+        android:gravity="center"
+        android:textColor="@color/text_grey"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/tv_nama"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/ganti_bahasa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginHorizontal="16dp"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:focusable="true"
+        android:stateListAnimator="@animator/btn_click"
+        app:layout_constraintTop_toBottomOf="@id/tv_no_hp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_round_language_24"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="12dp"
+            android:text="Ganti Bahasa"
+            android:textSize="14sp"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/poppins_semibold"
+            android:includeFontPadding="false"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_round_arrow_forward_24"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_horizontal_1"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="#11000000"
+        app:layout_constraintTop_toBottomOf="@id/ganti_bahasa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/alamat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:layout_marginHorizontal="16dp"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:focusable="true"
+        android:stateListAnimator="@animator/btn_click"
+        app:layout_constraintTop_toBottomOf="@id/ganti_bahasa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_round_location_on_24"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="12dp"
+            android:text="Alamat"
+            android:textSize="14sp"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/poppins_semibold"
+            android:includeFontPadding="false"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_round_arrow_forward_24"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_horizontal_2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="#11000000"
+        app:layout_constraintTop_toBottomOf="@id/alamat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/pelayanan_pelanggan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:layout_marginHorizontal="16dp"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:focusable="true"
+        android:stateListAnimator="@animator/btn_click"
+        app:layout_constraintTop_toBottomOf="@id/alamat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_round_local_phone_24"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="12dp"
+            android:text="Pelayanan Pelanggan"
+            android:textSize="14sp"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/poppins_semibold"
+            android:includeFontPadding="false"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_round_arrow_forward_24"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_horizontal_3"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="#11000000"
+        app:layout_constraintTop_toBottomOf="@id/pelayanan_pelanggan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/tentang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:layout_marginHorizontal="16dp"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:focusable="true"
+        android:stateListAnimator="@animator/btn_click"
+        app:layout_constraintTop_toBottomOf="@id/pelayanan_pelanggan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_round_info_24"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="12dp"
+            android:text="Tentang BisaCatering"
+            android:textSize="14sp"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/poppins_semibold"
+            android:includeFontPadding="false"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_round_arrow_forward_24"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_horizontal_4"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="#11000000"
+        app:layout_constraintTop_toBottomOf="@id/tentang"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/kebijakan_privasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:layout_marginHorizontal="16dp"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:focusable="true"
+        android:stateListAnimator="@animator/btn_click"
+        app:layout_constraintTop_toBottomOf="@id/tentang"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_round_lock_24"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="12dp"
+            android:text="Kebijakan Privasi"
+            android:textSize="14sp"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/poppins_semibold"
+            android:includeFontPadding="false"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_round_arrow_forward_24"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_horizontal_5"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="#11000000"
+        app:layout_constraintTop_toBottomOf="@id/kebijakan_privasi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:layout_marginHorizontal="16dp"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:focusable="true"
+        android:stateListAnimator="@animator/btn_click"
+        app:layout_constraintTop_toBottomOf="@id/kebijakan_privasi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_round_logout_24"
+            app:tint="@color/orange"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="12dp"
+            android:text="Keluar"
+            android:textSize="14sp"
+            android:textColor="@color/orange"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/poppins_semibold"
+            android:includeFontPadding="false"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_round_arrow_forward_24"
+            app:tint="@color/orange"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_horizontal_6"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="#11000000"
+        app:layout_constraintTop_toBottomOf="@id/logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
