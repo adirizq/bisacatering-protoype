@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    tools:context=".activity.RocaActivity">
+
+    <LinearLayout
+        android:id="@+id/chat_roca"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/bg_yellow_rounded"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="62dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.project.bisacatering.component.TypeWriterView
+            android:id="@+id/tv_roca"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:includeFontPadding="false"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="-50dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/roca"
+        app:layout_constraintTop_toTopOf="@id/chat_roca"
+        app:layout_constraintStart_toStartOf="@id/chat_roca"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:text="RoCa"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="22sp"
+        android:includeFontPadding="false"
+        app:layout_constraintTop_toTopOf="@id/chat_roca"
+        app:layout_constraintEnd_toEndOf="@id/chat_roca"/>
+
+    <LinearLayout
+        android:id="@+id/step_one"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/chat_roca"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Menu"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins_bold"
+            android:includeFontPadding="false" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kamu bisa pilih lebih dari satu"
+            android:textSize="14sp"
+            android:textColor="@color/text_grey"
+            android:includeFontPadding="false" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.project.bisacatering.component.Checkbox
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@drawable/checkbox_text_color"
+                android:gravity="center"
+                android:button="@null"
+                android:includeFontPadding="false"
+                android:text="Ayam" />
+
+            <com.project.bisacatering.component.Checkbox
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@drawable/checkbox_text_color"
+                android:button="@null"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="Bebek" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.project.bisacatering.component.Checkbox
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@drawable/checkbox_text_color"
+                android:gravity="center"
+                android:button="@null"
+                android:includeFontPadding="false"
+                android:text="Sapi" />
+
+            <com.project.bisacatering.component.Checkbox
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@drawable/checkbox_text_color"
+                android:button="@null"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="Kambing" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.project.bisacatering.component.Checkbox
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@drawable/checkbox_text_color"
+                android:gravity="center"
+                android:button="@null"
+                android:includeFontPadding="false"
+                android:text="Buah" />
+
+            <com.project.bisacatering.component.Checkbox
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@drawable/checkbox_text_color"
+                android:button="@null"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="Minuman Dingin" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.project.bisacatering.component.Checkbox
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@drawable/checkbox_text_color"
+                android:gravity="center"
+                android:button="@null"
+                android:includeFontPadding="false"
+                android:text="Minuman Hangat" />
+
+            <com.project.bisacatering.component.Checkbox
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@drawable/checkbox_text_color"
+                android:button="@null"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="Snack" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/step_two"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/chat_roca"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Jenis Acara"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins_bold"
+            android:includeFontPadding="false" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pilih satu aja ya"
+            android:textSize="14sp"
+            android:textColor="@color/text_grey"
+            android:includeFontPadding="false" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <RadioGroup
+                android:id="@+id/rg_jenis_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:orientation="vertical">
+
+                <com.project.bisacatering.component.Radio
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@drawable/checkbox_text_color"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:includeFontPadding="false"
+                    android:text="Keluarga" />
+
+                <com.project.bisacatering.component.Radio
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@drawable/checkbox_text_color"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:includeFontPadding="false"
+                    android:text="Sekolah" />
+
+                <com.project.bisacatering.component.Radio
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@drawable/checkbox_text_color"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:includeFontPadding="false"
+                    android:text="Pemerintahan" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/rg_jenis_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:orientation="vertical">
+
+                <com.project.bisacatering.component.Radio
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textColor="@drawable/checkbox_text_color"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:includeFontPadding="false"
+                    android:text="Keagamaan" />
+
+                <com.project.bisacatering.component.Radio
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@drawable/checkbox_text_color"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:includeFontPadding="false"
+                    android:text="Perusahaan" />
+
+                <com.project.bisacatering.component.Radio
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@drawable/checkbox_text_color"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:includeFontPadding="false"
+                    android:text="Komunitas" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/step_three"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/chat_roca"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Jumlah Orang"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins_bold"
+            android:includeFontPadding="false" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Perkiraan aja gapapa ko"
+            android:textSize="14sp"
+            android:textColor="@color/text_grey"
+            android:includeFontPadding="false" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edt_orang_min"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:hint="1"
+                android:fontFamily="@font/poppins_semibold"
+                android:inputType="number"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="sampai"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:fontFamily="@font/poppins_bold"
+                android:includeFontPadding="false" />
+
+            <EditText
+                android:id="@+id/edt_orang_max"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:layout_weight="1"
+                android:hint="1000"
+                android:fontFamily="@font/poppins_semibold"
+                android:inputType="number"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/step_four"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/chat_roca"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Budget"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins_bold"
+            android:includeFontPadding="false" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Minimum dan Maksimumnya diisi ya"
+            android:textSize="14sp"
+            android:textColor="@color/text_grey"
+            android:includeFontPadding="false" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Minimum"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:includeFontPadding="false" />
+
+        <EditText
+            android:id="@+id/edt_budget_min"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:hint="Rp100.000"
+            android:fontFamily="@font/poppins_bold"
+            android:inputType="number"
+            android:maxLength="12"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Maksimum"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:includeFontPadding="false" />
+
+        <EditText
+            android:id="@+id/edt_budget_max"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:hint="Rp10.000.000"
+            android:fontFamily="@font/poppins_bold"
+            android:inputType="number"
+            android:maxLength="12"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/step_six"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="32dp"
+        android:clipChildren="false"
+        app:layout_constraintTop_toBottomOf="@id/chat_roca"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rekomendasi RoCa"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins_bold"
+            android:includeFontPadding="false" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tinggal dipilih aja, hasil rekomendasi RoCa sudah pasti sesuai dengan budget kamu."
+            android:textSize="14sp"
+            android:textColor="@color/text_grey"
+            android:includeFontPadding="false" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:clipChildren="false">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/recommendation_1"
+                android:clipToPadding="false"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:paddingTop="30dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:stateListAnimator="@animator/btn_click"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/recommendation_2">
+
+                <LinearLayout
+                    android:id="@+id/box_recommendation_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_gravity="bottom"
+                    android:gravity="bottom"
+                    android:padding="10dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_menu"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Paket Keluarga"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:includeFontPadding="false" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingVertical="3dp"
+                        android:gravity="center"
+                        android:background="@drawable/bg_yellow_rounded_small"
+                        android:text="Rp200.000"
+                        android:textSize="12sp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:includeFontPadding="false" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="-30dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/menu"
+                    app:layout_constraintTop_toTopOf="@id/box_recommendation_1"
+                    app:layout_constraintStart_toStartOf="@id/box_recommendation_1"/>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_round_favorite_24"
+                    app:tint="@color/orange"
+                    app:layout_constraintTop_toTopOf="@id/box_recommendation_1"
+                    app:layout_constraintEnd_toEndOf="@id/box_recommendation_1"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/recommendation_2"
+                android:clipToPadding="false"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_marginStart="4dp"
+                android:paddingTop="30dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:stateListAnimator="@animator/btn_click"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/recommendation_1"
+                app:layout_constraintEnd_toStartOf="@id/recommendation_3">
+
+                <LinearLayout
+                    android:id="@+id/box_recommendation_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_gravity="bottom"
+                    android:gravity="bottom"
+                    android:padding="10dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_menu"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Paket Arisan Sederhana"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:includeFontPadding="false" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingVertical="3dp"
+                        android:gravity="center"
+                        android:background="@drawable/bg_yellow_rounded_small"
+                        android:text="Rp350.000"
+                        android:textSize="12sp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:includeFontPadding="false" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="-30dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/menu"
+                    app:layout_constraintTop_toTopOf="@id/box_recommendation_2"
+                    app:layout_constraintStart_toStartOf="@id/box_recommendation_2"/>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_round_favorite_border_24"
+                    app:tint="@color/orange"
+                    app:layout_constraintTop_toTopOf="@id/box_recommendation_2"
+                    app:layout_constraintEnd_toEndOf="@id/box_recommendation_2"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/recommendation_3"
+                android:clipToPadding="false"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:paddingTop="30dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:stateListAnimator="@animator/btn_click"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/recommendation_2"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/box_recommendation_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_gravity="bottom"
+                    android:gravity="bottom"
+                    android:padding="10dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_menu"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ayam Bakar Spesial"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:includeFontPadding="false" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingVertical="3dp"
+                        android:gravity="center"
+                        android:background="@drawable/bg_yellow_rounded_small"
+                        android:text="Rp20.000"
+                        android:textSize="12sp"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:includeFontPadding="false" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="-30dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/menu"
+                    app:layout_constraintTop_toTopOf="@id/box_recommendation_3"
+                    app:layout_constraintStart_toStartOf="@id/box_recommendation_3"/>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_round_favorite_border_24"
+                    app:tint="@color/orange"
+                    app:layout_constraintTop_toTopOf="@id/box_recommendation_3"
+                    app:layout_constraintEnd_toEndOf="@id/box_recommendation_3"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btn_continue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="32dp"
+        android:paddingVertical="16dp"
+        android:background="@drawable/bg_yellow_rounded"
+        android:text="Continue"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:clickable="true"
+        android:focusable="true"
+        android:stateListAnimator="@animator/btn_click"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/step_five"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/loading_roca"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/roca"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="64dp"
+            android:text="RoCa Lagi Mikir"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:fontFamily="@font/poppins_bold"
+            android:includeFontPadding="false" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="64dp"
+            android:layout_marginTop="4dp"
+            android:text="Sebentar ya, RoCa lagi mikir nih buat nentuin menu dan paket terbaik untukmu"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:textColor="@color/text_grey"
+            android:includeFontPadding="false" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
