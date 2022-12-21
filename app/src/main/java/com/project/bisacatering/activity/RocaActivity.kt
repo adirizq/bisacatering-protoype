@@ -11,10 +11,16 @@ import android.view.animation.Animation
 import android.view.animation.Animation.AnimationListener
 import android.view.animation.AnimationUtils
 import android.widget.RadioGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.project.bisacatering.R
+import com.project.bisacatering.adapter.MenuAdapter
 import com.project.bisacatering.databinding.ActivityRocaBinding
+import com.project.bisacatering.model.Menu
 import java.text.NumberFormat
 import java.util.*
 
@@ -26,6 +32,9 @@ class RocaActivity : AppCompatActivity() {
     private lateinit var rg1: RadioGroup
     private lateinit var rg2: RadioGroup
 
+    private var db = Firebase.firestore
+    private var menuLaris = ArrayList<Menu>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val splashScreen = installSplashScreen()
@@ -36,31 +45,33 @@ class RocaActivity : AppCompatActivity() {
         binding.tvRoca.setDelay(50);
         stepZero()
 
-        binding.recommendation1.setOnClickListener {
-            val intent = Intent(this, DetailMenuActivity::class.java)
-            startActivity(intent)
-        }
-
         binding.btnContinue.setOnClickListener {
             clear()
             binding.tvRoca.removeAnimation()
-            if(currStep == 1){
-                stepOne()
-                currStep++
-            }else if(currStep == 2){
-                stepTwo()
-                currStep++
-            }else if(currStep == 3){
-                stepThree()
-                currStep++
-            }else if(currStep == 4){
-                stepFour()
-                currStep++
-            }else if(currStep == 5){
-                stepFive()
-                currStep++
-            }else if(currStep == 7){
-                finish()
+            when(currStep){
+                1->{
+                    stepOne()
+                    currStep++
+                }
+                2->{
+                    stepTwo()
+                    currStep++
+                }
+                3->{
+                    stepThree()
+                    currStep++
+                }
+                4->{
+                    stepFour()
+                    currStep++
+                }
+                5->{
+                    stepFive()
+                    currStep++
+                }
+                7->{
+                    finish()
+                }
             }
         }
     }
@@ -224,6 +235,35 @@ class RocaActivity : AppCompatActivity() {
 
         binding.tvRoca.animateText("Ini rekomendasi menu dan paket dari RoCa, semoga dapat membantu kamu ya.")
         binding.stepSix.visibility = View.VISIBLE
+
+        val menuLarisAdapter = MenuAdapter(this, menuLaris)
+        binding.rvLaris.adapter = menuLarisAdapter
+        binding.loadingLaris.visibility = View.VISIBLE
+
+        db.collection("menu_laris")
+            .get()
+            .addOnSuccessListener { documents ->
+                menuLaris.clear()
+                for (document in documents) {
+                    Log.d("MAIN_TAG", "${document.id} => ${document.data}")
+
+                    menuLaris.add(
+                        Menu(
+                            document.data["name"] as String,
+                            (document.data["price"] as Long).toInt(),
+                            document.data["person"] as String,
+                            document.data["process"] as String,
+                        )
+                    )
+                }
+                menuLarisAdapter.notifyDataSetChanged()
+                binding.loadingLaris.visibility = View.GONE
+            }
+            .addOnFailureListener { exception ->
+                binding.loadingLaris.visibility = View.GONE
+                Toast.makeText(this, exception.toString(), Toast.LENGTH_SHORT).show()
+                Log.w("MAIN_TAG", "Error getting documents: ", exception)
+            }
     }
 
     private fun clear(){

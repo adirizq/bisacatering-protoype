@@ -120,224 +120,35 @@
             app:layout_constraintTop_toBottomOf="@id/tv_laris"
             app:layout_constraintStart_toStartOf="parent"/>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/laris_1"
-            android:clipToPadding="false"
-            android:layout_width="0dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_laris"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginStart="16dp"
-            android:paddingTop="30dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@animator/btn_click"
+            android:layout_marginHorizontal="16dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
             app:layout_constraintTop_toBottomOf="@id/tv_laris_desc"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/laris_2">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:spanCount="3"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/item_menu"/>
 
-            <LinearLayout
-                android:id="@+id/box_laris_1"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_gravity="bottom"
-                android:gravity="bottom"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_menu"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Paket Keluarga"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:includeFontPadding="false" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingVertical="3dp"
-                    android:gravity="center"
-                    android:background="@drawable/bg_yellow_rounded_small"
-                    android:text="Rp200.000"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:includeFontPadding="false" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="-30dp"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/menu"
-                app:layout_constraintTop_toTopOf="@id/box_laris_1"
-                app:layout_constraintStart_toStartOf="@id/box_laris_1"/>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_round_favorite_24"
-                app:tint="@color/orange"
-                app:layout_constraintTop_toTopOf="@id/box_laris_1"
-                app:layout_constraintEnd_toEndOf="@id/box_laris_1"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/laris_2"
-            android:clipToPadding="false"
-            android:layout_width="0dp"
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/loading_laris"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginStart="4dp"
-            android:paddingTop="30dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@animator/btn_click"
-            app:layout_constraintTop_toBottomOf="@id/tv_laris_desc"
-            app:layout_constraintStart_toEndOf="@id/laris_1"
-            app:layout_constraintEnd_toStartOf="@id/laris_3">
-
-            <LinearLayout
-                android:id="@+id/box_laris_2"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_gravity="bottom"
-                android:gravity="bottom"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_menu"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Paket Arisan Sederhana"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:includeFontPadding="false" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingVertical="3dp"
-                    android:gravity="center"
-                    android:background="@drawable/bg_yellow_rounded_small"
-                    android:text="Rp350.000"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:includeFontPadding="false" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="-30dp"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/menu"
-                app:layout_constraintTop_toTopOf="@id/box_laris_2"
-                app:layout_constraintStart_toStartOf="@id/box_laris_2"/>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_round_favorite_border_24"
-                app:tint="@color/orange"
-                app:layout_constraintTop_toTopOf="@id/box_laris_2"
-                app:layout_constraintEnd_toEndOf="@id/box_laris_2"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/laris_3"
-            android:clipToPadding="false"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="4dp"
-            android:paddingTop="30dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@animator/btn_click"
-            app:layout_constraintTop_toBottomOf="@id/tv_laris_desc"
-            app:layout_constraintStart_toEndOf="@id/laris_2"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <LinearLayout
-                android:id="@+id/box_laris_3"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_gravity="bottom"
-                android:gravity="bottom"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_menu"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Ayam Bakar Spesial"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:includeFontPadding="false" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingVertical="3dp"
-                    android:gravity="center"
-                    android:background="@drawable/bg_yellow_rounded_small"
-                    android:text="Rp20.000"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:includeFontPadding="false" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="-30dp"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/menu"
-                app:layout_constraintTop_toTopOf="@id/box_laris_3"
-                app:layout_constraintStart_toStartOf="@id/box_laris_3"/>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_round_favorite_border_24"
-                app:tint="@color/orange"
-                app:layout_constraintTop_toTopOf="@id/box_laris_3"
-                app:layout_constraintEnd_toEndOf="@id/box_laris_3"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_marginTop="32dp"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            app:indicatorColor="@color/yellow"
+            app:layout_constraintTop_toBottomOf="@id/rv_laris"
+            app:layout_constraintStart_toStartOf="@id/rv_laris"
+            app:layout_constraintEnd_toEndOf="@id/rv_laris"
+            app:layout_constraintBottom_toTopOf="@id/rv_laris"/>
 
         <View
             android:id="@+id/view_horizontal_1"
@@ -346,7 +157,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginHorizontal="16dp"
             android:background="#11000000"
-            app:layout_constraintTop_toBottomOf="@id/laris_1"
+            app:layout_constraintTop_toBottomOf="@id/rv_laris"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -375,224 +186,35 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_paket_1" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/paket_1_1"
-            android:clipToPadding="false"
-            android:layout_width="0dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_paket_1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginStart="16dp"
-            android:paddingTop="30dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@animator/btn_click"
+            android:layout_marginHorizontal="16dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
             app:layout_constraintTop_toBottomOf="@id/tv_paket_1_desc"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/paket_1_2">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:spanCount="3"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/item_menu"/>
 
-            <LinearLayout
-                android:id="@+id/box_paket_1_1"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_gravity="bottom"
-                android:gravity="bottom"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_menu"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Paket Keluarga"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:includeFontPadding="false" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingVertical="3dp"
-                    android:gravity="center"
-                    android:background="@drawable/bg_yellow_rounded_small"
-                    android:text="Rp350.000"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:includeFontPadding="false" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="-30dp"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/menu"
-                app:layout_constraintTop_toTopOf="@id/box_paket_1_1"
-                app:layout_constraintStart_toStartOf="@id/box_paket_1_1"/>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_round_favorite_24"
-                app:tint="@color/orange"
-                app:layout_constraintTop_toTopOf="@id/box_paket_1_1"
-                app:layout_constraintEnd_toEndOf="@id/box_paket_1_1"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/paket_1_2"
-            android:clipToPadding="false"
-            android:layout_width="0dp"
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/loading_paket_1"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginStart="4dp"
-            android:paddingTop="30dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@animator/btn_click"
-            app:layout_constraintTop_toBottomOf="@id/tv_paket_1_desc"
-            app:layout_constraintStart_toEndOf="@id/paket_1_1"
-            app:layout_constraintEnd_toStartOf="@id/paket_1_3">
-
-            <LinearLayout
-                android:id="@+id/box_paket_1_2"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_gravity="bottom"
-                android:gravity="bottom"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_menu"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Paket Arisan Sederhana"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:includeFontPadding="false" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingVertical="3dp"
-                    android:gravity="center"
-                    android:background="@drawable/bg_yellow_rounded_small"
-                    android:text="Rp350.000"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:includeFontPadding="false" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="-30dp"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/menu"
-                app:layout_constraintTop_toTopOf="@id/box_paket_1_2"
-                app:layout_constraintStart_toStartOf="@id/box_paket_1_2"/>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_round_favorite_border_24"
-                app:tint="@color/orange"
-                app:layout_constraintTop_toTopOf="@id/box_paket_1_2"
-                app:layout_constraintEnd_toEndOf="@id/box_paket_1_2"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/paket_1_3"
-            android:clipToPadding="false"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="4dp"
-            android:paddingTop="30dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@animator/btn_click"
-            app:layout_constraintTop_toBottomOf="@id/tv_paket_1_desc"
-            app:layout_constraintStart_toEndOf="@id/paket_1_2"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <LinearLayout
-                android:id="@+id/box_paket_1_3"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_gravity="bottom"
-                android:gravity="bottom"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_menu"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Paket Ulang Tahun"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:includeFontPadding="false" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingVertical="3dp"
-                    android:gravity="center"
-                    android:background="@drawable/bg_yellow_rounded_small"
-                    android:text="Rp300.000"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:includeFontPadding="false" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="-30dp"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/menu"
-                app:layout_constraintTop_toTopOf="@id/box_paket_1_3"
-                app:layout_constraintStart_toStartOf="@id/box_paket_1_3"/>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_round_favorite_border_24"
-                app:tint="@color/orange"
-                app:layout_constraintTop_toTopOf="@id/box_paket_1_3"
-                app:layout_constraintEnd_toEndOf="@id/box_paket_1_3"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_marginTop="32dp"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            app:indicatorColor="@color/yellow"
+            app:layout_constraintTop_toBottomOf="@id/rv_paket_1"
+            app:layout_constraintStart_toStartOf="@id/rv_paket_1"
+            app:layout_constraintEnd_toEndOf="@id/rv_paket_1"
+            app:layout_constraintBottom_toTopOf="@id/rv_paket_1"/>
 
         <View
             android:id="@+id/view_horizontal_2"
@@ -601,7 +223,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginHorizontal="16dp"
             android:background="#11000000"
-            app:layout_constraintTop_toBottomOf="@id/paket_1_1"
+            app:layout_constraintTop_toBottomOf="@id/rv_paket_1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -630,224 +252,35 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_paket_2" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/paket_2_1"
-            android:clipToPadding="false"
-            android:layout_width="0dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_paket_2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginStart="16dp"
-            android:paddingTop="30dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@animator/btn_click"
+            android:layout_marginHorizontal="16dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
             app:layout_constraintTop_toBottomOf="@id/tv_paket_2_desc"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/paket_2_2">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:spanCount="3"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/item_menu"/>
 
-            <LinearLayout
-                android:id="@+id/box_paket_2_1"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_gravity="bottom"
-                android:gravity="bottom"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_menu"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Paket Syukuran"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:includeFontPadding="false" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingVertical="3dp"
-                    android:gravity="center"
-                    android:background="@drawable/bg_yellow_rounded_small"
-                    android:text="Rp1.300.000"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:includeFontPadding="false" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="-30dp"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/menu"
-                app:layout_constraintTop_toTopOf="@id/box_paket_2_1"
-                app:layout_constraintStart_toStartOf="@id/box_paket_2_1"/>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_round_favorite_24"
-                app:tint="@color/orange"
-                app:layout_constraintTop_toTopOf="@id/box_paket_2_1"
-                app:layout_constraintEnd_toEndOf="@id/box_paket_2_1"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/paket_2_2"
-            android:clipToPadding="false"
-            android:layout_width="0dp"
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/loading_paket_2"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginStart="4dp"
-            android:paddingTop="30dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@animator/btn_click"
-            app:layout_constraintTop_toBottomOf="@id/tv_paket_2_desc"
-            app:layout_constraintStart_toEndOf="@id/paket_2_1"
-            app:layout_constraintEnd_toStartOf="@id/paket_2_3">
-
-            <LinearLayout
-                android:id="@+id/box_paket_2_2"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_gravity="bottom"
-                android:gravity="bottom"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_menu"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Paket Tahlilan"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:includeFontPadding="false" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingVertical="3dp"
-                    android:gravity="center"
-                    android:background="@drawable/bg_yellow_rounded_small"
-                    android:text="Rp1.000.000"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:includeFontPadding="false" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="-30dp"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/menu"
-                app:layout_constraintTop_toTopOf="@id/box_paket_2_2"
-                app:layout_constraintStart_toStartOf="@id/box_paket_2_2"/>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_round_favorite_border_24"
-                app:tint="@color/orange"
-                app:layout_constraintTop_toTopOf="@id/box_paket_2_2"
-                app:layout_constraintEnd_toEndOf="@id/box_paket_2_2"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/paket_2_3"
-            android:clipToPadding="false"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="4dp"
-            android:paddingTop="30dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@animator/btn_click"
-            app:layout_constraintTop_toBottomOf="@id/tv_paket_2_desc"
-            app:layout_constraintStart_toEndOf="@id/paket_2_2"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <LinearLayout
-                android:id="@+id/box_paket_2_3"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_gravity="bottom"
-                android:gravity="bottom"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_menu"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Paket Plesiran"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:includeFontPadding="false" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingVertical="3dp"
-                    android:gravity="center"
-                    android:background="@drawable/bg_yellow_rounded_small"
-                    android:text="Rp20.000"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:includeFontPadding="false" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="-30dp"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/menu"
-                app:layout_constraintTop_toTopOf="@id/box_paket_2_3"
-                app:layout_constraintStart_toStartOf="@id/box_paket_2_3"/>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_round_favorite_border_24"
-                app:tint="@color/orange"
-                app:layout_constraintTop_toTopOf="@id/box_paket_2_3"
-                app:layout_constraintEnd_toEndOf="@id/box_paket_2_3"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_marginTop="32dp"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            app:indicatorColor="@color/yellow"
+            app:layout_constraintTop_toBottomOf="@id/rv_paket_2"
+            app:layout_constraintStart_toStartOf="@id/rv_paket_2"
+            app:layout_constraintEnd_toEndOf="@id/rv_paket_2"
+            app:layout_constraintBottom_toTopOf="@id/rv_paket_2"/>
 
         <View
             android:id="@+id/view_horizontal_3"
@@ -856,7 +289,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginHorizontal="16dp"
             android:background="#11000000"
-            app:layout_constraintTop_toBottomOf="@id/paket_2_1"
+            app:layout_constraintTop_toBottomOf="@id/rv_paket_2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -885,224 +318,35 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_paket_3" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/paket_3_1"
-            android:clipToPadding="false"
-            android:layout_width="0dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_paket_3"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginStart="16dp"
-            android:paddingTop="30dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@animator/btn_click"
+            android:layout_marginHorizontal="16dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
             app:layout_constraintTop_toBottomOf="@id/tv_paket_3_desc"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/paket_3_2">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:spanCount="3"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/item_menu"/>
 
-            <LinearLayout
-                android:id="@+id/box_paket_3_1"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_gravity="bottom"
-                android:gravity="bottom"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_menu"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Paket Wisuda Spesial"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:includeFontPadding="false" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingVertical="3dp"
-                    android:gravity="center"
-                    android:background="@drawable/bg_yellow_rounded_small"
-                    android:text="Rp5.000.000"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:includeFontPadding="false" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="-30dp"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/menu"
-                app:layout_constraintTop_toTopOf="@id/box_paket_3_1"
-                app:layout_constraintStart_toStartOf="@id/box_paket_3_1"/>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_round_favorite_24"
-                app:tint="@color/orange"
-                app:layout_constraintTop_toTopOf="@id/box_paket_3_1"
-                app:layout_constraintEnd_toEndOf="@id/box_paket_3_1"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/paket_3_2"
-            android:clipToPadding="false"
-            android:layout_width="0dp"
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/loading_paket_3"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginStart="4dp"
-            android:paddingTop="30dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@animator/btn_click"
-            app:layout_constraintTop_toBottomOf="@id/tv_paket_3_desc"
-            app:layout_constraintStart_toEndOf="@id/paket_3_1"
-            app:layout_constraintEnd_toStartOf="@id/paket_3_3">
-
-            <LinearLayout
-                android:id="@+id/box_paket_3_2"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_gravity="bottom"
-                android:gravity="bottom"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_menu"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Paket Konser"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:includeFontPadding="false" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingVertical="3dp"
-                    android:gravity="center"
-                    android:background="@drawable/bg_yellow_rounded_small"
-                    android:text="Rp7.000.000"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:includeFontPadding="false" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="-30dp"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/menu"
-                app:layout_constraintTop_toTopOf="@id/box_paket_3_2"
-                app:layout_constraintStart_toStartOf="@id/box_paket_3_2"/>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_round_favorite_border_24"
-                app:tint="@color/orange"
-                app:layout_constraintTop_toTopOf="@id/box_paket_3_2"
-                app:layout_constraintEnd_toEndOf="@id/box_paket_3_2"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/paket_3_3"
-            android:clipToPadding="false"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="4dp"
-            android:paddingTop="30dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@animator/btn_click"
-            app:layout_constraintTop_toBottomOf="@id/tv_paket_3_desc"
-            app:layout_constraintStart_toEndOf="@id/paket_3_2"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <LinearLayout
-                android:id="@+id/box_paket_3_3"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_gravity="bottom"
-                android:gravity="bottom"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_menu"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Paket Pernikahan"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:includeFontPadding="false" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingVertical="3dp"
-                    android:gravity="center"
-                    android:background="@drawable/bg_yellow_rounded_small"
-                    android:text="Rp6.000.000"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:includeFontPadding="false" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="-30dp"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/menu"
-                app:layout_constraintTop_toTopOf="@id/box_paket_3_3"
-                app:layout_constraintStart_toStartOf="@id/box_paket_3_3"/>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_round_favorite_border_24"
-                app:tint="@color/orange"
-                app:layout_constraintTop_toTopOf="@id/box_paket_3_3"
-                app:layout_constraintEnd_toEndOf="@id/box_paket_3_3"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_marginTop="32dp"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            app:indicatorColor="@color/yellow"
+            app:layout_constraintTop_toBottomOf="@id/rv_paket_3"
+            app:layout_constraintStart_toStartOf="@id/rv_paket_3"
+            app:layout_constraintEnd_toEndOf="@id/rv_paket_3"
+            app:layout_constraintBottom_toTopOf="@id/rv_paket_3"/>
 
         <View
             android:id="@+id/view_horizontal_4"
@@ -1111,7 +355,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginHorizontal="16dp"
             android:background="#11000000"
-            app:layout_constraintTop_toBottomOf="@id/paket_3_1"
+            app:layout_constraintTop_toBottomOf="@id/rv_paket_3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -1140,224 +384,35 @@
             app:layout_constraintTop_toBottomOf="@id/tv_ayam"
             app:layout_constraintStart_toStartOf="parent"/>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ayam_1"
-            android:clipToPadding="false"
-            android:layout_width="0dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_ayam"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginStart="16dp"
-            android:paddingTop="30dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@animator/btn_click"
+            android:layout_marginHorizontal="16dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
             app:layout_constraintTop_toBottomOf="@id/tv_ayam_desc"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/ayam_2">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:spanCount="3"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/item_menu"/>
 
-            <LinearLayout
-                android:id="@+id/box_ayam_1"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_gravity="bottom"
-                android:gravity="bottom"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_menu"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Ayam Goreng"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:includeFontPadding="false" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingVertical="3dp"
-                    android:gravity="center"
-                    android:background="@drawable/bg_yellow_rounded_small"
-                    android:text="Rp20.000"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:includeFontPadding="false" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="-30dp"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/menu"
-                app:layout_constraintTop_toTopOf="@id/box_ayam_1"
-                app:layout_constraintStart_toStartOf="@id/box_ayam_1"/>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_round_favorite_24"
-                app:tint="@color/orange"
-                app:layout_constraintTop_toTopOf="@id/box_ayam_1"
-                app:layout_constraintEnd_toEndOf="@id/box_ayam_1"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ayam_2"
-            android:clipToPadding="false"
-            android:layout_width="0dp"
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/loading_ayam"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginStart="4dp"
-            android:paddingTop="30dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@animator/btn_click"
-            app:layout_constraintTop_toBottomOf="@id/tv_ayam_desc"
-            app:layout_constraintStart_toEndOf="@id/ayam_1"
-            app:layout_constraintEnd_toStartOf="@id/ayam_3">
-
-            <LinearLayout
-                android:id="@+id/box_ayam_2"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_gravity="bottom"
-                android:gravity="bottom"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_menu"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Ayam Bakar"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:includeFontPadding="false" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingVertical="3dp"
-                    android:gravity="center"
-                    android:background="@drawable/bg_yellow_rounded_small"
-                    android:text="Rp20.000"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:includeFontPadding="false" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="-30dp"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/menu"
-                app:layout_constraintTop_toTopOf="@id/box_ayam_2"
-                app:layout_constraintStart_toStartOf="@id/box_ayam_2"/>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_round_favorite_border_24"
-                app:tint="@color/orange"
-                app:layout_constraintTop_toTopOf="@id/box_ayam_2"
-                app:layout_constraintEnd_toEndOf="@id/box_ayam_2"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ayam_3"
-            android:clipToPadding="false"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="4dp"
-            android:paddingTop="30dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@animator/btn_click"
-            app:layout_constraintTop_toBottomOf="@id/tv_ayam_desc"
-            app:layout_constraintStart_toEndOf="@id/ayam_2"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <LinearLayout
-                android:id="@+id/box_ayam_3"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_gravity="bottom"
-                android:gravity="bottom"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_menu"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Ayam Penyet"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:includeFontPadding="false" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingVertical="3dp"
-                    android:gravity="center"
-                    android:background="@drawable/bg_yellow_rounded_small"
-                    android:text="Rp20.000"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:includeFontPadding="false" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="-30dp"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/menu"
-                app:layout_constraintTop_toTopOf="@id/box_ayam_3"
-                app:layout_constraintStart_toStartOf="@id/box_ayam_3"/>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_round_favorite_border_24"
-                app:tint="@color/orange"
-                app:layout_constraintTop_toTopOf="@id/box_ayam_3"
-                app:layout_constraintEnd_toEndOf="@id/box_ayam_3"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_marginTop="32dp"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            app:indicatorColor="@color/yellow"
+            app:layout_constraintTop_toBottomOf="@id/rv_ayam"
+            app:layout_constraintStart_toStartOf="@id/rv_ayam"
+            app:layout_constraintEnd_toEndOf="@id/rv_ayam"
+            app:layout_constraintBottom_toTopOf="@id/rv_ayam"/>
 
         <View
             android:id="@+id/view_horizontal_5"
@@ -1366,7 +421,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginHorizontal="16dp"
             android:background="#11000000"
-            app:layout_constraintTop_toBottomOf="@id/ayam_1"
+            app:layout_constraintTop_toBottomOf="@id/rv_ayam"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -1395,224 +450,35 @@
             app:layout_constraintTop_toBottomOf="@id/tv_sapi"
             app:layout_constraintStart_toStartOf="parent"/>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/sapi_1"
-            android:clipToPadding="false"
-            android:layout_width="0dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_sapi"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginStart="16dp"
-            android:paddingTop="30dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@animator/btn_click"
+            android:layout_marginHorizontal="16dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
             app:layout_constraintTop_toBottomOf="@id/tv_sapi_desc"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/sapi_2">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:spanCount="3"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/item_menu"/>
 
-            <LinearLayout
-                android:id="@+id/box_sapi_1"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_gravity="bottom"
-                android:gravity="bottom"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_menu"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Rendang"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:includeFontPadding="false" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingVertical="3dp"
-                    android:gravity="center"
-                    android:background="@drawable/bg_yellow_rounded_small"
-                    android:text="Rp25.000"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:includeFontPadding="false" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="-30dp"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/menu"
-                app:layout_constraintTop_toTopOf="@id/box_sapi_1"
-                app:layout_constraintStart_toStartOf="@id/box_sapi_1"/>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_round_favorite_24"
-                app:tint="@color/orange"
-                app:layout_constraintTop_toTopOf="@id/box_sapi_1"
-                app:layout_constraintEnd_toEndOf="@id/box_sapi_1"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/sapi_2"
-            android:clipToPadding="false"
-            android:layout_width="0dp"
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/loading_sapi"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginStart="4dp"
-            android:paddingTop="30dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@animator/btn_click"
-            app:layout_constraintTop_toBottomOf="@id/tv_sapi_desc"
-            app:layout_constraintStart_toEndOf="@id/sapi_1"
-            app:layout_constraintEnd_toStartOf="@id/sapi_3">
-
-            <LinearLayout
-                android:id="@+id/box_sapi_2"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_gravity="bottom"
-                android:gravity="bottom"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_menu"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Rawon"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:includeFontPadding="false" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingVertical="3dp"
-                    android:gravity="center"
-                    android:background="@drawable/bg_yellow_rounded_small"
-                    android:text="Rp25.000"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:includeFontPadding="false" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="-30dp"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/menu"
-                app:layout_constraintTop_toTopOf="@id/box_sapi_2"
-                app:layout_constraintStart_toStartOf="@id/box_sapi_2"/>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_round_favorite_border_24"
-                app:tint="@color/orange"
-                app:layout_constraintTop_toTopOf="@id/box_sapi_2"
-                app:layout_constraintEnd_toEndOf="@id/box_sapi_2"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/sapi_3"
-            android:clipToPadding="false"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="4dp"
-            android:paddingTop="30dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@animator/btn_click"
-            app:layout_constraintTop_toBottomOf="@id/tv_sapi_desc"
-            app:layout_constraintStart_toEndOf="@id/sapi_2"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <LinearLayout
-                android:id="@+id/box_sapi_3"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_gravity="bottom"
-                android:gravity="bottom"
-                android:padding="10dp"
-                android:orientation="vertical"
-                android:background="@drawable/bg_menu"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Gulai Sapi"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/poppins_bold"
-                    android:includeFontPadding="false" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:paddingVertical="3dp"
-                    android:gravity="center"
-                    android:background="@drawable/bg_yellow_rounded_small"
-                    android:text="Rp25.000"
-                    android:textSize="12sp"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppins_semibold"
-                    android:includeFontPadding="false" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="-30dp"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/menu"
-                app:layout_constraintTop_toTopOf="@id/box_sapi_3"
-                app:layout_constraintStart_toStartOf="@id/box_sapi_3"/>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/ic_round_favorite_border_24"
-                app:tint="@color/orange"
-                app:layout_constraintTop_toTopOf="@id/box_sapi_3"
-                app:layout_constraintEnd_toEndOf="@id/box_sapi_3"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_marginTop="32dp"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            app:indicatorColor="@color/yellow"
+            app:layout_constraintTop_toBottomOf="@id/rv_sapi"
+            app:layout_constraintStart_toStartOf="@id/rv_sapi"
+            app:layout_constraintEnd_toEndOf="@id/rv_sapi"
+            app:layout_constraintBottom_toTopOf="@id/rv_sapi"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

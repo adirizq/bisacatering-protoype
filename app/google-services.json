@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "689519671422",
+    "project_id": "bisa-catering",
+    "storage_bucket": "bisa-catering.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:689519671422:android:5781c176312d1049cc802f",
+        "android_client_info": {
+          "package_name": "com.project.bisacatering"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "689519671422-b5s38agvhk8gpqu1ga6c4umjf9jau2c8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.project.bisacatering",
+            "certificate_hash": "2f5fd080bebdb916ea3913bb02d9abaea78c67f9"
+          }
+        },
+        {
+          "client_id": "689519671422-cu174lpa0ksg2fof051ii9d57hah2afi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWclI7uR8zheBAcfzyW05fldT4bs8gMqY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "689519671422-cu174lpa0ksg2fof051ii9d57hah2afi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

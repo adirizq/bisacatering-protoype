@@ -516,227 +516,17 @@
             android:includeFontPadding="false" />
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_laris"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:clipChildren="false">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/recommendation_1"
-                android:clipToPadding="false"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
-                android:paddingTop="30dp"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:focusable="true"
-                android:stateListAnimator="@animator/btn_click"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/recommendation_2">
-
-                <LinearLayout
-                    android:id="@+id/box_recommendation_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_gravity="bottom"
-                    android:gravity="bottom"
-                    android:padding="10dp"
-                    android:orientation="vertical"
-                    android:background="@drawable/bg_menu"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Paket Keluarga"
-                        android:textSize="14sp"
-                        android:fontFamily="@font/poppins_bold"
-                        android:includeFontPadding="false" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:paddingVertical="3dp"
-                        android:gravity="center"
-                        android:background="@drawable/bg_yellow_rounded_small"
-                        android:text="Rp200.000"
-                        android:textSize="12sp"
-                        android:textColor="@color/white"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:includeFontPadding="false" />
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="-30dp"
-                    android:layout_marginStart="8dp"
-                    android:src="@drawable/menu"
-                    app:layout_constraintTop_toTopOf="@id/box_recommendation_1"
-                    app:layout_constraintStart_toStartOf="@id/box_recommendation_1"/>
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:src="@drawable/ic_round_favorite_24"
-                    app:tint="@color/orange"
-                    app:layout_constraintTop_toTopOf="@id/box_recommendation_1"
-                    app:layout_constraintEnd_toEndOf="@id/box_recommendation_1"/>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/recommendation_2"
-                android:clipToPadding="false"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
-                android:layout_marginStart="4dp"
-                android:paddingTop="30dp"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:focusable="true"
-                android:stateListAnimator="@animator/btn_click"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@id/recommendation_1"
-                app:layout_constraintEnd_toStartOf="@id/recommendation_3">
-
-                <LinearLayout
-                    android:id="@+id/box_recommendation_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_gravity="bottom"
-                    android:gravity="bottom"
-                    android:padding="10dp"
-                    android:orientation="vertical"
-                    android:background="@drawable/bg_menu"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Paket Arisan Sederhana"
-                        android:textSize="14sp"
-                        android:fontFamily="@font/poppins_bold"
-                        android:includeFontPadding="false" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:paddingVertical="3dp"
-                        android:gravity="center"
-                        android:background="@drawable/bg_yellow_rounded_small"
-                        android:text="Rp350.000"
-                        android:textSize="12sp"
-                        android:textColor="@color/white"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:includeFontPadding="false" />
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="-30dp"
-                    android:layout_marginStart="8dp"
-                    android:src="@drawable/menu"
-                    app:layout_constraintTop_toTopOf="@id/box_recommendation_2"
-                    app:layout_constraintStart_toStartOf="@id/box_recommendation_2"/>
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:src="@drawable/ic_round_favorite_border_24"
-                    app:tint="@color/orange"
-                    app:layout_constraintTop_toTopOf="@id/box_recommendation_2"
-                    app:layout_constraintEnd_toEndOf="@id/box_recommendation_2"/>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/recommendation_3"
-                android:clipToPadding="false"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:paddingTop="30dp"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:focusable="true"
-                android:stateListAnimator="@animator/btn_click"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@id/recommendation_2"
-                app:layout_constraintEnd_toEndOf="parent">
-
-                <LinearLayout
-                    android:id="@+id/box_recommendation_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_gravity="bottom"
-                    android:gravity="bottom"
-                    android:padding="10dp"
-                    android:orientation="vertical"
-                    android:background="@drawable/bg_menu"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Ayam Bakar Spesial"
-                        android:textSize="14sp"
-                        android:fontFamily="@font/poppins_bold"
-                        android:includeFontPadding="false" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:paddingVertical="3dp"
-                        android:gravity="center"
-                        android:background="@drawable/bg_yellow_rounded_small"
-                        android:text="Rp20.000"
-                        android:textSize="12sp"
-                        android:textColor="@color/white"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:includeFontPadding="false" />
-
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="-30dp"
-                    android:layout_marginStart="8dp"
-                    android:src="@drawable/menu"
-                    app:layout_constraintTop_toTopOf="@id/box_recommendation_3"
-                    app:layout_constraintStart_toStartOf="@id/box_recommendation_3"/>
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:src="@drawable/ic_round_favorite_border_24"
-                    app:tint="@color/orange"
-                    app:layout_constraintTop_toTopOf="@id/box_recommendation_3"
-                    app:layout_constraintEnd_toEndOf="@id/box_recommendation_3"/>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            app:spanCount="3"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            tools:listitem="@layout/item_menu"/>
 
 
     </LinearLayout>
@@ -759,6 +549,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/loading_laris"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:indicatorColor="@color/yellow" />
 
     <LinearLayout
         android:id="@+id/step_five"

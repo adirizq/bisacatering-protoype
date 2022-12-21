@@ -6,4 +6,9 @@
     <string name="title_account">Account</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="placeholder">...</string>
+
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras condimentum nisl sed arcu lobortis consequat. Praesent lobortis in neque non consequat. Aliquam felis quam, vehicula semper magna eu, viverra tristique lorem. Nullam pretium, metus quis porttitor gravida, ipsum velit euismod augue, vitae pharetra ante odio a turpis.
+
+        Proin vitae quam at lacus pretium imperdiet. Aliquam erat volutpat. Donec ut libero at neque auctor mattis nec sit amet sapien. In hac habitasse platea dictumst. Pellentesque venenatis laoreet ex, ac sollicitudin dolor sollicitudin nec. Etiam finibus egestas sapien, gravida sollicitudin orci. Maecenas a semper felis.</string>
 </resources>

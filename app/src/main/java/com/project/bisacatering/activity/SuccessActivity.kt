@@ -1,12 +1,12 @@
 package com.project.bisacatering.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.view.View
+import android.util.Log
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.project.bisacatering.R
 import com.project.bisacatering.databinding.ActivitySuccessBinding
@@ -39,9 +39,18 @@ class SuccessActivity : AppCompatActivity() {
             override fun onTick(p0: Long) {}
 
             override fun onFinish() {
-                val intent = Intent(this@SuccessActivity, MainActivity::class.java)
-                intent.flags =  Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                startActivity(intent)
+                if(extras?.getBoolean("ORDER") == true){
+                    Log.d("MAIN_ACTIVITY", "AAA".toString())
+                    val intent = Intent(this@SuccessActivity, MainActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP
+                    intent.putExtra("ORDER", true)
+                    startActivity(intent)
+                } else {
+                    val intent = Intent(this@SuccessActivity, MainActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+                    startActivity(intent)
+                    finishAffinity()
+                }
             }
         }
 
